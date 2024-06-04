@@ -3,7 +3,6 @@ import obatImg from '../../assets/images/obat-3.png'
 
 const ObatDetailPage = () => {
     return (
-        <>
         <main>
             <div className="main-wrapper flex flex-col md:flex-row md:px-[200px] md:py-[100px] relative">
                 <div className="image md:basis-1/2 md:flex md:flex-col md:justify-between">
@@ -151,7 +150,6 @@ const ObatDetailPage = () => {
                 </div>
             </div>
         </main>
-        </>
     )
 }
 
