@@ -12,6 +12,7 @@ import ArticleDetailPage from '../pages/ArticlesDetail/ArticleDetailPage'
 import VidEdukasi from '../pages/VidEdukasi'
 import VidEduDetailPage from '../pages/VidEduDetail/VidEduDetailPage'
 import DataObat from '../pages/DataObat'
+import ObatDetailPage from '../pages/ObatDetail/ObatDetailPage'
 
 const Routers = () => {
     return <Routes>
@@ -24,6 +25,7 @@ const Routers = () => {
         <Route path='/video-edukasi' element={<VidEdukasi/>} />
         <Route path='/video-edukasi/:id' element={<VidEduDetailPage/>} />
         <Route path='/data-obat' element={<DataObat/>} />
+        <Route path='/data-obat/:id' element={<ObatDetailPage/>} />
         {/* <Route path='/doctors' element={<Doctors/>} />
         <Route path='/doctors/:id' element={<DoctorDetails/>} />
         <Route path='/contact' element={<Contact/>} />

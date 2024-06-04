@@ -48,12 +48,14 @@ const tagsData = [
 ]
 
 const VidEduDetailPage = () => {
+    const youtubeID = "bxwRvvLrSkU"
+
     return (
         <>
         <section className='container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start'>
             <article className='flex-1'>
                 <BreadCrumbs data={breadCrumbsData} />
-                <iframe className='rounded-xl w-full h-[188px] lg:w-[640px] md:w-full lg:h-[360px] md:h-[434px] border-none focus:border-none' src="https://www.youtube.com/embed/aOebfGGcjVw?si=AOLEYFXpw46W8IBC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe className='rounded-xl w-full h-[188px] lg:w-[640px] md:w-full lg:h-[360px] md:h-[434px] border-none focus:border-none' src={`https://www.youtube.com/embed/${youtubeID}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <Link to="/artikel?category=selectedCategory" className='text-textColor text-sm inline-block mt-4 md:text-base'>
                     KESEHATAN
                 </Link>
