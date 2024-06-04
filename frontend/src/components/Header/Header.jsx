@@ -14,11 +14,11 @@ const navLinks = [
         display: 'Artikel',
     },
     {
-        path: '/',
+        path: '/data-obat',
         display: 'Data Obat',
     },
     {
-        path: '/',
+        path: '/video-edukasi',
         display: 'Video Edukasi',
     },
 ]

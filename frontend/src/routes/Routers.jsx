@@ -9,6 +9,9 @@ import DoctorDetails from '../pages/Doctors/DoctorDetails'
 import {Routes, Route} from 'react-router-dom'
 import Artikel from '../pages/Artikel'
 import ArticleDetailPage from '../pages/ArticlesDetail/ArticleDetailPage'
+import VidEdukasi from '../pages/VidEdukasi'
+import VidEduDetailPage from '../pages/VidEduDetail/VidEduDetailPage'
+import DataObat from '../pages/DataObat'
 
 const Routers = () => {
     return <Routes>
@@ -18,6 +21,9 @@ const Routers = () => {
         <Route path='/register' element={<Signup/>} />
         <Route path='/artikel' element={<Artikel/>} />
         <Route path='/artikel/:id' element={<ArticleDetailPage/>} />
+        <Route path='/video-edukasi' element={<VidEdukasi/>} />
+        <Route path='/video-edukasi/:id' element={<VidEduDetailPage/>} />
+        <Route path='/data-obat' element={<DataObat/>} />
         {/* <Route path='/doctors' element={<Doctors/>} />
         <Route path='/doctors/:id' element={<DoctorDetails/>} />
         <Route path='/contact' element={<Contact/>} />

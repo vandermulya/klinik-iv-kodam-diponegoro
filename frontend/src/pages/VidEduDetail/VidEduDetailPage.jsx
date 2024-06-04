@@ -1,13 +1,11 @@
 import React from 'react'
-import fotoTitleArtikel from './../../assets/images/artCard3.jpg'
-import fotoTitleArtikel2 from './../../assets/images/artCard2.jpg'
 import { Link } from 'react-router-dom'
+import fotoTitleArtikel2 from './../../assets/images/artCard3.jpg'
 
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs'
 import SuggestedPosts from './container/SuggestedPosts'
 import CommentsContainer from '../../components/Comments/CommentsContainer'
 import SocialShareButtons from '../../components/SocialMedia/SocialShareButtons'
-
 
 const breadCrumbsData = [
     {
@@ -15,12 +13,12 @@ const breadCrumbsData = [
         link: '/'
     },
     {
-        name: "Artikel",
-        link: '/artikel'
+        name: "Video Edukasi",
+        link: '/video-edukasi'
     },
     {
-        name: "Halaman Artikel",
-        link: '/artikel/1'
+        name: "Halaman Video Edukasi",
+        link: '/video-edukasi/1'
     },
 ]
 
@@ -46,21 +44,21 @@ const postsData = [
 ]
 
 const tagsData = [
-    "Kesehatan", "Mental", "Edukasi", "Gaya Hidup", "Edukasi",
+    "Kesehatan", "Gaya Hidup", 
 ]
 
-const ArticleDetailPage = () => {
+const VidEduDetailPage = () => {
     return (
         <>
         <section className='container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start'>
             <article className='flex-1'>
                 <BreadCrumbs data={breadCrumbsData} />
-                <img className='rounded-xl w-full' src={fotoTitleArtikel} alt="Foto Cover Artikel" />
+                <iframe className='rounded-xl w-full h-[188px] lg:w-[640px] md:w-full lg:h-[360px] md:h-[434px] border-none focus:border-none' src="https://www.youtube.com/embed/aOebfGGcjVw?si=AOLEYFXpw46W8IBC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <Link to="/artikel?category=selectedCategory" className='text-textColor text-sm inline-block mt-4 md:text-base'>
                     KESEHATAN
                 </Link>
                 <h1 className='text-xl font-[600] mt-4 text-headingColor md:text-[26px]'>
-                    Tips Menjaga Pola Makan
+                    Mengapa Kita Perlu Menggosok Gigi?
                 </h1>
                 <div className="mt-4 text-slate-700">
                     <p className="leading-7">
@@ -90,4 +88,4 @@ const ArticleDetailPage = () => {
     )
 }
 
-export default ArticleDetailPage
+export default VidEduDetailPage
