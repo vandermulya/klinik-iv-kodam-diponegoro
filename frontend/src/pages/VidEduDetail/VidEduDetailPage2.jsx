@@ -18,7 +18,7 @@ const breadCrumbsData = [
     },
     {
         name: "Halaman Video Edukasi",
-        link: '/video-edukasi/1'
+        link: '/video-edukasi/2'
     },
 ]
 
@@ -47,8 +47,8 @@ const tagsData = [
     "Kesehatan", "Gaya Hidup", 
 ]
 
-const VidEduDetailPage = () => {
-    const youtubeID = "bxwRvvLrSkU"
+const VidEduDetailPage2 = () => {
+    const youtubeID = "PoxkMmW5CFM"
 
     return (
         <>
@@ -60,11 +60,11 @@ const VidEduDetailPage = () => {
                     KESEHATAN
                 </Link>
                 <h1 className='text-xl font-[600] mt-4 text-headingColor md:text-[26px]'>
-                    DAGUSIBU
+                    BUD dan ED
                 </h1>
                 <div className="mt-4 text-slate-700">
                     <p className="leading-7">
-                        Dagusibu adalah singkatan dari Dapatkan, Gunakan, Simpan dan Buang Obat dengan benar yang ditujukan agar masyarakat lebih paham mengenai obat.
+                        Mengenal perbedaan Beyond Use Date dan Expired Date Obat
                     </p>
                 </div>
                 <CommentsContainer className="mt-10" logginedUserId="a" />
@@ -88,4 +88,4 @@ const VidEduDetailPage = () => {
     )
 }
 
-export default VidEduDetailPage
+export default VidEduDetailPage2

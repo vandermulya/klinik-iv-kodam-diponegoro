@@ -35,53 +35,53 @@ const FooterCoba = () => {
         <section className="bg-none px-0 py-0">
         <footer className="bg-gradient-to-r from-[#cdf1f2] via-[#ffffff] to-[#fff5e0] container mx-auto grid grid-cols-10 px-5 py-10 gap-y-10 gap-x-5 md:pt-20 md:grid-cols-12 lg:grid-cols-8">
             <div className="col-span-5 md:col-span-4 lg:col-span-2 md:ml-[80px] lg:ml-[150px]">
-            <h3 className="text-headingColor font-bold md:text-lg">Product</h3>
+            <h3 className="text-headingColor font-bold md:text-lg">Artikel</h3>
             <ul className="text-[#4e535a] text-sm mt-5 space-y-4 md:text-base font-[400]">
                 <li>
-                <a href="/">List 1</a>
+                <a href="/">Artikel 1</a>
                 </li>
                 <li>
-                <a href="/">List 2</a>
+                <a href="/">Artikel 2</a>
                 </li>
                 <li>
-                <a href="/">List 3</a>
+                <a href="/">Artikel 3</a>
                 </li>
                 <li>
-                <a href="/">List 4</a>
+                <a href="/">Artikel 4</a>
                 </li>
             </ul>
             </div>
             <div className="col-span-5 md:col-span-4 lg:col-span-2 md:ml-[40px] lg:ml-[80px]">
-            <h3 className="text-headingColor font-bold md:text-lg">Services</h3>
+            <h3 className="text-headingColor font-bold md:text-lg">Data Obat</h3>
             <ul className="text-[#4e535a] text-sm mt-5 space-y-4 md:text-base font-[400]">
                 <li>
-                <a href="/">List 1</a>
+                <a href="/">Obat 1</a>
                 </li>
                 <li>
-                <a href="/">List 2</a>
+                <a href="/">Obat 2</a>
                 </li>
                 <li>
-                <a href="/">List 3</a>
+                <a href="/">Obat 3</a>
                 </li>
                 <li>
-                <a href="/">List 4</a>
+                <a href="/">Obat 4</a>
                 </li>
             </ul>
             </div>
             <div className="col-span-5 md:col-span-4 lg:col-span-1 md:ml-[5px] lg:ml-[5px]">
-            <h3 className="text-headingColor font-bold md:text-lg">Company</h3>
+            <h3 className="text-headingColor font-bold md:text-lg">Video Edukasi</h3>
             <ul className="text-[#4e535a] text-sm mt-5 space-y-4 md:text-base font-[400]">
                 <li>
-                <a href="/">List 1</a>
+                <a href="/">Video 1</a>
                 </li>
                 <li>
-                <a href="/">List 2</a>
+                <a href="/">Video 2</a>
                 </li>
                 <li>
-                <a href="/">List 3</a>
+                <a href="/">Video 3</a>
                 </li>
                 <li>
-                <a href="/">List 4</a>
+                <a href="/">Video 4</a>
                 </li>
             </ul>
             </div>

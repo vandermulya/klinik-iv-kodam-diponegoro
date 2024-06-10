@@ -3,6 +3,7 @@ import headVidEduImg from '../assets/images/art-header-4.png'
 import { RiSearchLine } from "react-icons/ri";
 import { HiArrowRight } from "react-icons/hi";
 import VidEduCard from '../components/VideoEdukasi/VidEduCard';
+import VidEduCard2 from '../components/VideoEdukasi/VidEduCard2';
 
 const VidEdukasi = () => {
     return (
@@ -42,12 +43,12 @@ const VidEdukasi = () => {
         <section className='flex flex-col container mx-auto px-5 py-10'>
             <div className="flex flex-wrap md:gap-x-5 gap-y-5 pb-10">
                 <VidEduCard className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]" />
-                <VidEduCard className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]" />
+                <VidEduCard2 className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]" />
             </div>
-            <button className='mx-auto flex items-center gap-x-2 font-bold text-[#0067FF] border-2 border-[#0067FF] px-6 py-3 rounded-lg'>
+            {/* <button className='mx-auto flex items-center gap-x-2 font-bold text-[#0067FF] border-2 border-[#0067FF] px-6 py-3 rounded-lg'>
                 <span>Lebih banyak</span>
                 <HiArrowRight className='w-3 h-3' />
-            </button>
+            </button> */}
         </section>
         </>
     )

@@ -7,7 +7,7 @@ import { BiMenu } from 'react-icons/bi'
 const navLinks = [
     {
         path: '/home',
-        display: 'Home',
+        display: 'Beranda',
     },
     {
         path: '/artikel',
@@ -84,9 +84,9 @@ const Header = () => {
                         </div>
                         
                         {/* ============ BUTTON LOGIN ============ */}
-                        <Link to='/login'>
+                        {/* <Link to='/login'>
                             <button className='bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]'>Login</button>
-                        </Link>
+                        </Link> */}
                         <span className='md:hidden' onClick={toggleMenu}>
                             <BiMenu className='w-6 h-6 cursor-pointer' />
                         </span>

@@ -5,19 +5,19 @@ import userImg from './../../assets/images/avatar-icon.png'
 import { BsCheckLg } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
-const ArticleCard = ({className}) => {
+const ArticleCard2 = ({className}) => {
     return (
         <>
         <div className={` rounded-xl overflow-hidden shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] ${className} `}>
-            <Link className='' to="/artikel/1">
-                <img src="https://images.unsplash.com/photo-1577368211130-4bbd0181ddf0?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gambar Postingan Artikel" className='w-full object-cover object-center h-auto md:h-52 lg:h-48 xl:h-60' />
+            <Link className='' to="/artikel/2">
+                <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1479&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gambar Postingan Artikel" className='w-full object-cover object-center h-auto md:h-52 lg:h-48 xl:h-60' />
             </Link>
             <div className="p-5">
                 <h2 className="font-[600] text-xl text-headingColor md:text-2xl lg:text-[24px]">
-                    APA ITU DAGUSIBU?
+                    Bijak Menggunakan Antibiotik
                 </h2>
                 <p className="text-textColor mt-3 text-[16px] leading-7">
-                    Dagusibu adalah singkatan dari Dapatkan, Gunakan, Simpan dan Buang Obat
+                    Antibiotik adalah Obat yang dapat membunuh dan mencegah pertumbuhan bakteri
                 </p>
                 <div className="flex justify-between flex-nowrap items-center mt-6">
                     <div className="flex items-center gap-x-2 md:gap-x-2.5">
@@ -46,4 +46,4 @@ const ArticleCard = ({className}) => {
     )
 }
 
-export default ArticleCard
+export default ArticleCard2

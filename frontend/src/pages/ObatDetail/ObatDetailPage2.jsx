@@ -1,7 +1,7 @@
 import React from 'react'
 import obatImg from '../../assets/images/obat-3.png'
 
-const ObatDetailPage = () => {
+const ObatDetailPage2 = () => {
     return (
         <main>
             <div className="main-wrapper flex flex-col md:flex-row md:px-[200px] md:py-[100px] relative">
@@ -9,14 +9,14 @@ const ObatDetailPage = () => {
                     <div className="hidden md:block large-image">
                         <img
                         className="object-cover cursor-pointer rounded-xl lg:w-[400px] md:w-[200px] lg:h-[400px] md:h-[200px]"
-                        src={obatImg}
+                        src="https://triman.co.id/images/ambroxol.jpg"
                         alt="Gambar Obat"
                         />
                     </div>
                     <div className="md:hidden large-image">
                         <img
                         className="w-[100%] h-[300px] object-cover"
-                        src={obatImg}
+                        src="https://triman.co.id/images/ambroxol.jpg"
                         alt="snekers-photo"
                         />
                     </div>
@@ -27,7 +27,7 @@ const ObatDetailPage = () => {
                         Detail Data Obat
                     </p>
                     <h1 className="text-3xl md:text-4xl capitalize font-[700]">
-                        ANTACIDA
+                        Ambroxol
                     </h1>
                     <br /><br />
 
@@ -35,10 +35,10 @@ const ObatDetailPage = () => {
                         Komposisi
                     </h2>
                     <p className="hidden md:block text-textColor font-[500] my-10 leading-7">
-                        Aluminium Hidroksida 200 mg magnesium hidroksida 200 mg
+                        Ambroxol HCL 30 mg
                     </p>
                     <p className="md:hidden text-textColor font-[500] my-6 leading-7">
-                        Aluminium Hidroksida 200 mg magnesium hidroksida 200 mg
+                        Ambroxol HCL 30 mg
                     </p>
                     <hr className='border border-[#d8d8d8]' />
 
@@ -46,10 +46,10 @@ const ObatDetailPage = () => {
                         Indikasi Umum
                     </h2>
                     <p className="hidden md:block text-textColor font-[500] my-10 leading-7">
-                        Meringankan gejala-gejala akibat kelebihan asam lambung misalnya dispepsia, tukak, GERD.
+                        Sebagai sekretolitik pada gangguan saluran napas akut dan kronik
                     </p>
                     <p className="md:hidden text-textColor font-[500] my-6 leading-7">
-                        Meringankan gejala-gejala akibat kelebihan asam lambung misalnya dispepsia, tukak, GERD.
+                        Sebagai sekretolitik pada gangguan saluran napas akut dan kronik
                     </p>
                     <hr className='border border-[#d8d8d8]' />
 
@@ -57,10 +57,10 @@ const ObatDetailPage = () => {
                         Dosis
                     </h2>
                     <p className="hidden md:block text-textColor font-[500] my-10 leading-7">
-                        4x sehari 1-2 tablet
+                        Dewasa & anak {'>'}12 tahun 2-3x 30 mg /hari, Dosis yang dianjurkan untuk anak-anak 1,2-1,6 mg/kgBB/hari
                     </p>
                     <p className="md:hidden text-textColor font-[500] my-6 leading-7">
-                        4x sehari 1-2 tablet
+                        Dewasa & anak `{'>'}`12 tahun 2-3x 30 mg /hari, Dosis yang dianjurkan untuk anak-anak 1,2-1,6 mg/kgBB/hari
                     </p>
                     <hr className='border border-[#d8d8d8]' />
 
@@ -113,10 +113,10 @@ const ObatDetailPage = () => {
                         Aturan Pakai
                     </h2>
                     <p className="hidden md:block text-textColor font-[500] my-10 leading-7">
-                        Saat perut kosong/ 1-2 jam sesudah makan dikunyah
+                        Sesudah makan
                     </p>
                     <p className="md:hidden text-textColor font-[500] my-6 leading-7">
-                        Saat perut kosong/ 1-2 jam sesudah makan dikunyah
+                        Sesudah makan
                     </p>
                     <hr className='border border-[#d8d8d8]' />
 
@@ -124,10 +124,10 @@ const ObatDetailPage = () => {
                         Efek Samping
                     </h2>
                     <p className="hidden md:block text-textColor font-[500] my-10 leading-7">
-                        Gangguan saluran cerna, gangguan absorpsi fosfat , Hipermagnesemia (bila dikonsumsi oleh pasien gagal ginjal)
+                        Gangguan saluran cerna ringan, reaksi alergi pada kulit, pembengkakan wajah, dispnea, demam
                     </p>
                     <p className="md:hidden text-textColor font-[500] my-6 leading-7">
-                        Gangguan saluran cerna, gangguan absorpsi fosfat , Hipermagnesemia (bila dikonsumsi oleh pasien gagal ginjal)
+                        Gangguan saluran cerna ringan, reaksi alergi pada kulit, pembengkakan wajah, dispnea, demam
                     </p>
                 </div>
             </div>
@@ -135,4 +135,4 @@ const ObatDetailPage = () => {
     )
 }
 
-export default ObatDetailPage
+export default ObatDetailPage2

@@ -44,7 +44,9 @@ const Testimonial = () => {
                             </div>
                         </div>
 
-                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi harum id dicta amet?</p>
+                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
+                            Layanan yang sungguh luar biasa!
+                        </p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -66,7 +68,9 @@ const Testimonial = () => {
                             </div>
                         </div>
 
-                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi harum id dicta amet?</p>
+                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
+                            Kliniknya bersih dan nyaman!
+                        </p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -88,7 +92,9 @@ const Testimonial = () => {
                             </div>
                         </div>
 
-                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi harum id dicta amet?</p>
+                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
+                            Pelayanan yang cepat dan tanggap
+                        </p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -110,7 +116,9 @@ const Testimonial = () => {
                             </div>
                         </div>
 
-                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi harum id dicta amet?</p>
+                        <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
+                            Playgroundnya seru untuk anak-anak
+                        </p>
                     </div>
                 </SwiperSlide>
             </Swiper>

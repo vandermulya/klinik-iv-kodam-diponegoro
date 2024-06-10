@@ -13,6 +13,10 @@ import VidEdukasi from '../pages/VidEdukasi'
 import VidEduDetailPage from '../pages/VidEduDetail/VidEduDetailPage'
 import DataObat from '../pages/DataObat'
 import ObatDetailPage from '../pages/ObatDetail/ObatDetailPage'
+import ArticleDetailPage2 from '../pages/ArticlesDetail/ArticleDetailPage2'
+import VidEduDetailPage2 from '../pages/VidEduDetail/VidEduDetailPage2'
+import ObatDetailPage2 from '../pages/ObatDetail/ObatDetailPage2'
+import ObatDetailPage3 from '../pages/ObatDetail/ObatDetailPage3'
 
 const Routers = () => {
     return <Routes>
@@ -21,11 +25,15 @@ const Routers = () => {
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Signup/>} />
         <Route path='/artikel' element={<Artikel/>} />
-        <Route path='/artikel/:id' element={<ArticleDetailPage/>} />
+        <Route path='/artikel/1' element={<ArticleDetailPage/>} />
+        <Route path='/artikel/2' element={<ArticleDetailPage2/>} />
         <Route path='/video-edukasi' element={<VidEdukasi/>} />
-        <Route path='/video-edukasi/:id' element={<VidEduDetailPage/>} />
+        <Route path='/video-edukasi/1' element={<VidEduDetailPage/>} />
+        <Route path='/video-edukasi/2' element={<VidEduDetailPage2/>} />
         <Route path='/data-obat' element={<DataObat/>} />
-        <Route path='/data-obat/:id' element={<ObatDetailPage/>} />
+        <Route path='/data-obat/1' element={<ObatDetailPage/>} />
+        <Route path='/data-obat/2' element={<ObatDetailPage2/>} />
+        <Route path='/data-obat/3' element={<ObatDetailPage3/>} />
         {/* <Route path='/doctors' element={<Doctors/>} />
         <Route path='/doctors/:id' element={<DoctorDetails/>} />
         <Route path='/contact' element={<Contact/>} />

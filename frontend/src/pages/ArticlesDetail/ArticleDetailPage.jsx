@@ -55,18 +55,28 @@ const ArticleDetailPage = () => {
         <section className='container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start'>
             <article className='flex-1'>
                 <BreadCrumbs data={breadCrumbsData} />
-                <img className='rounded-xl w-full' src={fotoTitleArtikel} alt="Foto Cover Artikel" />
+                <img className='rounded-xl w-full' src="https://images.unsplash.com/photo-1577368211130-4bbd0181ddf0?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto Cover Artikel" />
                 <Link to="/artikel?category=selectedCategory" className='text-textColor text-sm inline-block mt-4 md:text-base'>
                     KESEHATAN
                 </Link>
                 <h1 className='text-xl font-[600] mt-4 text-headingColor md:text-[26px]'>
-                    Tips Menjaga Pola Makan
+                    APA ITU DAGUSIBU?
                 </h1>
                 <div className="mt-4 text-slate-700">
                     <p className="leading-7">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quae nostrum voluptas corporis exercitationem non suscipit quasi minus sit dolor alias itaque, adipisci ex ipsum molestias voluptatem! Odit debitis quam sit voluptatum architecto facere accusamus nesciunt, quaerat doloremque tenetur repellendus vitae maiores deserunt quod officiis cum consequatur eligendi reprehenderit odio! 
+                        Dagusibu adalah singkatan dari Dapatkan, Gunakan, Simpan dan Buang Obat dengan benar yang ditujukan agar masyarakat lebih paham mengenai obat. 
                         <br /><br />
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo expedita dolor ut omnis atque nisi aut, eos odit obcaecati incidunt, modi fugit voluptatum pariatur! Natus, dolore. Id natus, harum, iste corrupti exercitationem enim repudiandae molestias voluptatibus reiciendis nesciunt illo error quis vel, nostrum mollitia ipsam in ullam velit nisi! Est!
+                        DAPATKAN, 
+                        Pastikan mendapatkan obat di tempat yang terjamin mutu dan kualitas (obat asli dan berkhasiat) yaitu dari Apotik, Instalasi Farmasi di Rumah Sakit, Puskesmas, Klinik, dan Toko Obat Berijin. Selain obat lebih terjamin, di tempat tersebut kita juga mendapat informasi detail tentang obat yang dikonsumsi dari Apoteker yang berpraktek.
+                        <br /><br />
+                        GUNAKAN, 
+                        Pastikan setelah mendapatkan obat, selanjutnya anda harus memperhatikan petunjuk penggunaan obat yang tertera pada kemasan. Bacalah dengan saksama dan perhatikan tanggal kadaluarsa. Obat tidak untuk pemakaian secara terus menerus, gunakan obat sesuai anjuran dokter atau yang tertera pada brosur atau etiket, hentikan pemakaian obat jika timbul hal-hal yang tidak diinginkan, jangan menggunakan obat orang lain walaupun gejala penyakitnya sama, tanyakan pada Apoteker untuk mengetahui informasi yang lebih lengkap mengenai penggunaan obat.
+                        <br /><br />
+                        SIMPAN, 
+                        Agar obat dapat digunakan hingga masa kadaluarsa sebaiknya di simpan dengan petunjuk penyimpanan yang tepat. Simpan di tempat yang tidak terkena matahari langsung, kering dan tidak lembab agar kualitas obat tetap terjaga (untuk sediaan suppositoria disimpan dalam lemari pendingin). Perlu diperhatikan tempat penyimpanan jauh dari jangkauan anak-anak, simpan obat sesuai petunjuk pada kemasan obat. Simpan obat sesuai dengan  kemasan aslinya dan memastikan obat tersebut tertutup rapat agar terhindar dari kontaminasi.
+                        <br /><br />
+                        BUANG,  
+                        Pembuangan obat merupakan kegiatan dalam menyelesaikan masalah obat yang sudah tidak dipakai karena kadaluarsa, atau rusak. Ciri-cirinya adalah telah melewati tanggal waktu kadaluwarsa dan obat tersebut telah berubah rasa, bau dan warna. Obat yang telah kadaluarsa atau rusak tidak boleh dibuang sembarangan karena beresiko disalahgunakan atau tidak sengaja terminum oleh orang. Cara membuang obat dirumah, pisahkan isi obat dengan kemasan, lepaskan etiket dan tutup dari wadah atau botol, buang secara terpisah, buang obat cair ke saluran air yang mengalir, buang obat padat dengan mengancurkan terlebih dahulu obat dan pendam dalam tanah, buang kemasan obat atau pembungkus obat setelah digunting.
                     </p>
                 </div>
                 <CommentsContainer className="mt-10" logginedUserId="a" />
