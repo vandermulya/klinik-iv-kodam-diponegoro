@@ -1,8 +1,37 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { useMutation } from '@tanstack/react-query'
+import { signup } from '../services/index/users'
+import toast from 'react-hot-toast'
+import { useDispatch, useSelector } from 'react-redux'
+import { userActions } from '../store/reducers/userReducers'
 
 const Signup = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const userState = useSelector((state) => state.user);
+
+    const { mutate, isLoading } = useMutation({
+        mutationFn: ({ name, email, password }) => {
+            return signup({ name, email, password });
+        },
+        onSuccess: (data) => {
+            dispatch(userActions.setUserInfo(data));
+            localStorage.setItem("account", JSON.stringify(data));
+        },
+        onError: (error) => {
+            toast.error(error.message);
+            console.log(error);
+        },
+    });
+
+    useEffect(() => {
+        if (userState.userInfo) {
+            navigate("/");
+        }
+    }, [navigate, userState.userInfo]);
+
     const {register, handleSubmit, formState: {errors, isValid}, watch} = useForm({
         defaultValues: {
             name: "",
@@ -14,7 +43,8 @@ const Signup = () => {
     })
 
     const submitHandler = (data) => {
-        console.log(data);
+        const { name, email, password } = data;
+        mutate({name, email, password})
     };
 
     const password = watch('password');
@@ -114,11 +144,7 @@ const Signup = () => {
                         )}
                     </div>
                     
-                    <Link to='/forget-password' className='text-base font-semibold text-primaryColor'>
-                        Lupa kata sandi?
-                    </Link>
-
-                    <button type='submit' disabled={!isValid} className='bg-primaryColor text-white font-bold text-lg py-4 px-8 w-full rounded-lg my-6 disabled:opacity-70 disabled:cursor-not-allowed'>
+                    <button type='submit' disabled={!isValid || isLoading} className='bg-primaryColor text-white font-bold text-lg py-4 px-8 w-full rounded-lg my-6 disabled:opacity-70 disabled:cursor-not-allowed'>
                         Daftar
                     </button>
 

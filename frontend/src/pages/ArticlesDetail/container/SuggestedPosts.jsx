@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { stables } from '../../../constants'
+import sampleImg from '../../../assets/images/artCard2.jpg'
 
 const SuggestedPosts = ({ className, header, posts = [], tags}) => {
     return (
@@ -12,12 +14,14 @@ const SuggestedPosts = ({ className, header, posts = [], tags}) => {
                 {posts.map((item) => (
                     <div key={item._id} className='flex space-x-3 flex-nowrap items-center'>
                         <img className='aspect-square object-cover rounded-lg w-1/5' 
-                        src={item.image} 
-                        alt="Foto Cover Artikel" />
+                        src={item?.photo ? stables.UPLOAD_FOLDER_BASE_URL + item?.photo : sampleImg} 
+                        alt={item.title} />
 
                         <div className="text-sm text-headingColor font-medium">
                             <h3 className='text-sm text-headingColor font-medium md:text-base lg:text-lg'>
-                                {item.title}
+                                <Link to={`/artikel/${item.slug}`}>
+                                    {item.title}
+                                </Link>
                             </h3>
                             <span className='text-xs opacity-60'>
                                 {new Date(item.createdAt).toLocaleDateString("id-ID", {
@@ -32,13 +36,18 @@ const SuggestedPosts = ({ className, header, posts = [], tags}) => {
             </div>
 
             <h2 className='font-medium text-headingColor mt-8 md:text-xl'>Tagar</h2>
-            <div className="flex flex-wrap gap-x-2 gap-y-2 mt-4">
-                {tags.map((item, index) => (
-                    <Link key={index} to="/" className='inline-block rounded-md px-3 py-1.5 bg-primaryColor text-xs text-white md:text-sm'>
-                        {item}
-                    </Link>
-                ))}
-            </div>
+            
+            {tags.length === 0 ? (
+                <p className='text-slate-500 text-sm mt-2'>Tidak ada tagar di artikel ini</p>
+            ) : (
+                <div className="flex flex-wrap gap-x-2 gap-y-2 mt-4">
+                    {tags.map((item, index) => (
+                        <Link key={index} to="/" className='inline-block rounded-md px-3 py-1.5 bg-primaryColor text-xs text-white md:text-sm'>
+                            {item}
+                        </Link>
+                    ))}
+                </div>
+            )}
         </div>
     )
 }

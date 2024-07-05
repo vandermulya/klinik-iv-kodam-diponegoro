@@ -31,8 +31,9 @@ const Home = () => {
                             <div>
                                 <div className="lg:w-[570px]">
                                     <h1 className='text-[36px] leading-[46px] text-headingColor font-[700] md:text-[60px] md:leading-[70px]'>
-                                        Sehatkan Negeri Layani dengan Hati
+                                        APLIKASI OBATKU
                                     </h1>
+                                    <h3 className='text-[20px] leading-[34px] text-headingColor font-[600] md:text-[34px] md:leading-[50px] mt-5'>Sehatkan Negeri Layani dengan Hati</h3>
                                     <p className="text__para">
                                         Menjadikan Klinik Pratama pilihan dan terpercaya untuk keluarga besar Kodam IV/Diponegoro dan masyarakat pada umumnya tahun 2025 serta mampu bersaing di era global 2030.
                                     </p>

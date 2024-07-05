@@ -1,7 +1,8 @@
 import React from 'react'
-import avatarComment from './../../assets/images/avatar-icon.png'
+import avatarComment from './../../assets/images/sample-user.png'
 import { FiMessageSquare, FiEdit2, FiTrash2 } from "react-icons/fi";
 import CommentForm from './CommentForm';
+import { stables } from '../../constants';
 
 const Comment = ({ 
     comment, 
@@ -28,8 +29,10 @@ const Comment = ({
     const replyOnUserId = comment.user._id;
 
     return (
-        <div className='flex flex-nowrap items-start gap-x-3 bg-[#f2f4f5] p-3 rounded-lg'>
-            <img className='w-9 h-9 object-cover rounded-full' src={avatarComment} alt="User Profile" />
+        <div className='flex flex-nowrap items-start gap-x-3 bg-[#f2f4f5] p-3 rounded-lg' 
+            id={`comment-${comment?._id}`}
+        >
+            <img className='w-9 h-9 object-cover rounded-full' src={comment?.user?.avatar ? stables.UPLOAD_FOLDER_BASE_URL + comment.user.avatar : avatarComment} alt="User Profile" />
 
             <div className="flex-1 flex flex-col">
                 <h5 className="font-bold text-headingColor text-xs lg:text-sm">
@@ -40,7 +43,8 @@ const Comment = ({
                         day: "numeric",
                         month: "long",
                         year: "numeric",
-                        hour: "2-digit",
+                        hour: "numeric",
+                        minute: "numeric",
                     })}
                 </span>
                 {!isEditing && (

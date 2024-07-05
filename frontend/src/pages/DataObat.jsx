@@ -164,16 +164,82 @@ const DataObat = () => {
 
     return (
         <>
-        <div className='mx-auto max-w-lg flex flex-col justify-center my-12'>
+        {/* <div className='mx-auto max-w-lg flex flex-col justify-center my-12'>
             <h1 className='text-center text-2xl font-bold mb-12'>DATA OBAT</h1>
-        </div>
+        </div> */}
         {/* <ObatList /> */}
-        <div className="container mt-5">
+        {/* <div className="container mt-5">
             <div className="text-end">
                 <input type="text" placeholder='Cari Obat' className='rounded-lg border-primaryColor' onChange={handleFilter} />
             </div>
             <DataTable columns={columns} data={myData} fixedHeader pagination>
             </DataTable>
+        </div> */}
+
+        <div className="p-5 h-screen">
+            <h1 className="text-xl mb-2">
+                Data Obat
+            </h1>
+
+            <div className="overflow-auto rounded-lg">
+                <table className='w-full'>
+                    <thead className='bg-gray-50 border-b-2 border-gray-200'>
+                        <tr>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                No.
+                            </th>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                Nama
+                            </th>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                Indikasi
+                            </th>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                Komposisi
+                            </th>
+                            <th className='p-3 text-sm font-semibold tracking-wide text-left'>
+                                Detail Obat
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr className='odd:bg-white even:bg-slate-50'>
+                            <td>1</td>
+                            <td>Mecobalamin</td>
+                            <td>Neuropati perifer</td>
+                            <td>Mecobalamin 500 mcg</td>
+                            <td>
+                                <button>
+                                    Selengkapnya
+                                </button>
+                            </td>
+                        </tr>
+                        <tr className='odd:bg-white even:bg-slate-50'>
+                            <td>1</td>
+                            <td>Mecobalamin</td>
+                            <td>Neuropati perifer</td>
+                            <td>Mecobalamin 500 mcg</td>
+                            <td>
+                                <button>
+                                    Selengkapnya
+                                </button>
+                            </td>
+                        </tr>
+                        <tr className='odd:bg-white even:bg-slate-50'>
+                            <td>1</td>
+                            <td>Mecobalamin</td>
+                            <td>Neuropati perifer</td>
+                            <td>Mecobalamin 500 mcg</td>
+                            <td>
+                                <button>
+                                    Selengkapnya
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         </>
     )
