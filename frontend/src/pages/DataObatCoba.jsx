@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
@@ -18,6 +18,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import { RiSearchLine } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -25,9 +26,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
         color: theme.palette.common.white,
         fontFamily: 'Figtree, sans-serif',
         fontSize: 16,
+        fontWeight: 600,
     },
     [`&.${tableCellClasses.body}`]: {
-        fontSize: 14,
+        fontSize: 15,
+        fontWeight: 500,
         fontFamily: 'Figtree, sans-serif',
     },
 }));
@@ -103,23 +106,31 @@ TablePaginationActions.propTypes = {
     rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(nama, indikasi, komposisi, dosis, aturanpakai, efeksmpg) {
-    return { nama, indikasi, komposisi, dosis, aturanpakai, efeksmpg };
-}
-
-const rows = [
-    createData('Amlodipin', 'Meringankan gejala-gejala akibat kelebihan asam lambung misalnya dispepsia, tukak, GERD', 'Aluminium Hidroksida 200 mg magnesium hidroksida 200 mg', '4xsehari 1-2 tablet', 'Saat perut kosong/ 1-2 jam sesudah makan dikunyah', 'Gangguan saluran cerna, gangguan absorpsi fosfat , Hipermagnesemia (bila dikonsumsi oleh pasien gagal ginjal)'),
-    createData('Antacida', 'Meringankan gejala-gejala akibat kelebihan asam lambung misalnya dispepsia, tukak, GERD', 'Aluminium Hidroksida 200 mg magnesium hidroksida 200 mg', '4xsehari 1-2 tablet', 'Saat perut kosong/ 1-2 jam sesudah makan dikunyah', 'Gangguan saluran cerna, gangguan absorpsi fosfat , Hipermagnesemia (bila dikonsumsi oleh pasien gagal ginjal)'),
-    createData('Asam Mefenamat', 'Meringankan gejala-gejala akibat kelebihan asam lambung misalnya dispepsia, tukak, GERD', 'Aluminium Hidroksida 200 mg magnesium hidroksida 200 mg', '4xsehari 1-2 tablet', 'Saat perut kosong/ 1-2 jam sesudah makan dikunyah', 'Gangguan saluran cerna, gangguan absorpsi fosfat , Hipermagnesemia (bila dikonsumsi oleh pasien gagal ginjal)'),
-];
-
 const DataObatCoba = () => {
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [obats, setObats] = useState([]);
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [search, setSearch] = useState("")
 
-    // Avoid a layout jump when reaching the last page with empty rows.
-    const emptyRows =
-        page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+    useEffect(() => {
+        // Fungsi untuk mengambil data obat dari API
+        const fetchObats = async () => {
+            try {
+                const response = await fetch('/api/obats'); // Sesuaikan dengan endpoint yang benar
+                if (!response.ok) {
+                    throw new Error('Gagal mengambil data obat');
+                }
+                const data = await response.json();
+                setObats(data); // Simpan data obat dalam state
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+
+        fetchObats();
+    }, []);
+
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - obats.length) : 0;
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -134,18 +145,21 @@ const DataObatCoba = () => {
         <>
         <section className='container mx-auto flex flex-col px-5 py-5 lg:flex-row'>
             <div className="mt-10 lg:w-1/2">
-                <h1 className='text-3xl text-center font-[700] text-headingColor md:text-5xl lg:text-4xl xl:text-5xl lg:text-left lg:max-w-[540px]'>Perbanyak literasi medis melalui artikel kami.</h1>
+                <h1 className='text-3xl text-center font-[700] text-headingColor md:text-5xl lg:text-4xl xl:text-5xl lg:text-left lg:max-w-[540px]'>Ketahui macam-macam dan jenis obat-obatan.</h1>
                 <p className='text-textColor mt-4 text-center md:text-xl lg:text-base xl:text-xl lg:text-left'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque nemo ut temporibus. Amet aspernatur tempore veritatis, deserunt illo.
                 </p>
                 <div className="flex flex-col gap-y-2.5 mt-10 lg:mt-6 xl:mt-10 relative">
-                    <div className="relative">
-                        <RiSearchLine className='absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#959ead]'/>
-                        <input className='placeholder:font-bold placeholder:tracking-[1px] font-semibold text-textColor placeholder:text-[#959ead] rounded-lg pl-12 pr-3 w-full py-3 focus:outline-none shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] md:py-4' placeholder='Cari obat' type="text" />
-                    </div>
-                    <button className='w-full bg-primaryColor text-white font-semibold rounded-lg px-5 py-3 md:absolute md:right-2 md:top-1/2 md:-translate-y-1/2 md:w-fit md:py-2'>
-                        Cari
-                    </button>
+                    <form action="">
+                        <div className="relative">
+                            <RiSearchLine className='absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#959ead]'/>
+                            <input className='placeholder:font-bold placeholder:tracking-[0.5px] font-semibold text-textColor placeholder:text-[#959ead] rounded-lg pl-12 pr-3 w-full py-3 focus:outline-none shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] md:py-4 lg:m-0 my-3' placeholder='Cari obat' type="text" 
+                            onChange={(e) => setSearch(e.target.value)} />
+                        </div>
+                        <Link to='#' className='w-full bg-primaryColor text-white font-semibold rounded-lg px-5 py-3 md:absolute md:right-2 md:top-1/2 md:-translate-y-1/2 md:w-fit md:py-2'>
+                            Cari
+                        </Link>
+                    </form>
                 </div>
                 <div className="flex mt-4 flex-col lg:flex-row lg:items-start lg:flex-nowrap lg:gap-x-4 lg:mt-7">
                     <span className='text-textColor font-semibold italic mt-2 lg:mt-4 lg:text-sm xl:text-base'>
@@ -172,11 +186,11 @@ const DataObatCoba = () => {
                 <TableHead>
                 <TableRow>
                     <StyledTableCell>Nama</StyledTableCell>
-                    <StyledTableCell align="left">Indikasi</StyledTableCell>
-                    <StyledTableCell align="left">Komposisi</StyledTableCell>
-                    <StyledTableCell align="left">Dosis</StyledTableCell>
-                    <StyledTableCell align="left">Aturan Pakai</StyledTableCell>
-                    <StyledTableCell align="left">Efek Samping</StyledTableCell>
+                    <StyledTableCell align="center">Indikasi</StyledTableCell>
+                    <StyledTableCell align="center">Komposisi</StyledTableCell>
+                    <StyledTableCell align="center">Dosis</StyledTableCell>
+                    <StyledTableCell align="center">Aturan Pakai</StyledTableCell>
+                    <StyledTableCell align="center">Efek Samping</StyledTableCell>
                 </TableRow>
                 </TableHead>
                 {/* <TableBody>
@@ -194,48 +208,40 @@ const DataObatCoba = () => {
                 ))}
                 </TableBody> */}
                 <TableBody>
-                {(rowsPerPage > 0
-                    ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    : rows
-                ).map((row) => (
-                    <StyledTableRow key={row.nama}>
-                    <StyledTableCell component="th" scope="row">
-                        {row.nama}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">{row.indikasi}</StyledTableCell>
-                    <StyledTableCell align="left">{row.komposisi}</StyledTableCell>
-                    <StyledTableCell align="left">{row.dosis}</StyledTableCell>
-                    <StyledTableCell align="left">{row.aturanpakai}</StyledTableCell>
-                    <StyledTableCell align="left">{row.efeksmpg}</StyledTableCell>
-                    </StyledTableRow>
-                ))}
-                {emptyRows > 0 && (
-                    <TableRow style={{ height: 53 * emptyRows }}>
-                    <TableCell colSpan={6} />
-                    </TableRow>
-                )}
+                        {(rowsPerPage > 0
+                            ? obats.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            : obats
+                        ).filter((obat) => {return search.toLowerCase() === '' ? obat : obat.title.toLowerCase().includes(search) || obat.indikasi.toLowerCase().includes(search)}).map((obat) => (
+                            <TableRow key={obat._id}>
+                                <StyledTableCell component="th" scope="row">
+                                    {obat.title}
+                                </StyledTableCell>
+                                <StyledTableCell align="left">{obat.indikasi}</StyledTableCell>
+                                <StyledTableCell align="left">{obat.komposisi}</StyledTableCell>
+                                <StyledTableCell align="left">{obat.dosis}</StyledTableCell>
+                                <StyledTableCell align="left">{obat.aturanpakai}</StyledTableCell>
+                                <StyledTableCell align="left">{obat.efeksamping}</StyledTableCell>
+                            </TableRow>
+                        ))}
+                        {emptyRows > 0 && (
+                            <TableRow style={{ height: 53 * emptyRows }}>
+                                <TableCell colSpan={6} />
+                            </TableRow>
+                        )}
                 </TableBody>
+                
                 <TableFooter>
-                    <TableRow>
-                        <TablePagination
-                        rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                        colSpan={6}
-                        count={rows.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        slotProps={{
-                            select: {
-                            inputProps: {
-                                'aria-label': 'rows per page',
-                            },
-                            native: true,
-                            },
-                        }}
-                        onPageChange={handleChangePage}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
-                        ActionsComponent={TablePaginationActions}
-                        />
-                    </TableRow>
+                        <TableRow>
+                            <TablePagination
+                                rowsPerPageOptions={[5, 10, 25, { label: 'Semua', value: -1 }]}
+                                colSpan={6}
+                                count={obats.length}
+                                rowsPerPage={rowsPerPage}
+                                page={page}
+                                onPageChange={handleChangePage}
+                                onRowsPerPageChange={handleChangeRowsPerPage}
+                            />
+                        </TableRow>
                 </TableFooter>
             </Table>
         </TableContainer>

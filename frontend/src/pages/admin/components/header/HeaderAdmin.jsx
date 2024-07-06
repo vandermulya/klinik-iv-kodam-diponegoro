@@ -7,6 +7,7 @@ import { AiFillDashboard, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaUser } from 'react-icons/fa';
 import { FaComments } from "react-icons/fa";
 import { MdDashboard, MdVideoLibrary, MdCategory } from "react-icons/md";
+import { GiMedicines } from "react-icons/gi";
 import logoKlinik from '../../../../assets/images/logo.png'
 import NavItem from './NavItem';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -14,6 +15,7 @@ import NavItemCollapse from './NavItemCollapse';
 import { useSelector } from 'react-redux';
 import { createPost } from '../../../../services/index/posts';
 import { createVideo } from '../../../../services/index/videos';
+import { createObat } from '../../../../services/index/obats';
 
 const HeaderAdmin = () => {
     const navigate = useNavigate();
@@ -59,6 +61,26 @@ const HeaderAdmin = () => {
         },
     });
 
+    const { mutate: mutateCreateObat, isLoading: isLoadingCreateObat } = useMutation({
+        mutationFn: ({ token }) => {
+            return createObat({ token });
+        },
+        onSuccess: (data) => {
+            // console.log('Mutation success data:', data); // Tambahkan log untuk memeriksa data yang dikembalikan
+            queryClient.invalidateQueries(["obats"]);
+            if (data.slug) {
+                toast.success("Data obat sudah terbuat, edit sekarang!");
+                navigate(`/admin/obats/manage/edit/${data.slug}`); // Gunakan slug yang dikembalikan
+            } else {
+                toast.error("Data obat sudah terbuat, edit secara manual!");
+            }
+        },
+        onError: (error) => {
+            toast.error(error.message);
+            console.log(error);
+        },
+    });
+
     const toggleMenuHandler = () => {
         setIsMenuActive((prevState) => !prevState);
     };
@@ -77,6 +99,10 @@ const HeaderAdmin = () => {
 
     const handleCreateNewVideo = ({ token }) => {
         mutateCreateVideo({ token });
+    };
+
+    const handleCreateNewObat = ({ token }) => {
+        mutateCreateObat({ token });
     };
 
     
@@ -175,6 +201,23 @@ const HeaderAdmin = () => {
                         }
                         >
                         Buat Video Baru
+                        </button>
+                    </NavItemCollapse>
+
+                    <NavItemCollapse
+                        title="Obat"
+                        icon={<GiMedicines className="text-xl" />}
+                        name="obats"
+                        activeNavName={activeNavName}
+                        setActiveNavName={setActiveNavName}
+                    >
+                        <Link to="/admin/obats/manage">Kelola Obat</Link>
+                        <button
+                            className="text-start disabled:opacity-60 disabled:cursor-not-allowed"
+                            disabled={isLoadingCreateObat}
+                            onClick={() => handleCreateNewObat({ token: userState.userInfo.token })}
+                        >
+                            Buat Data Obat
                         </button>
                     </NavItemCollapse>
 

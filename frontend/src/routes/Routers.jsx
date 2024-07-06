@@ -25,6 +25,8 @@ import ArtikelPage from '../pages/ArtikelPage'
 import VidEduPage from '../pages/VidEduPage'
 import ManageVideos from '../pages/admin/screens/videos/ManageVideos'
 import EditVideo from '../pages/admin/screens/videos/EditVideo'
+import ManageObats from '../pages/admin/screens/obats/ManageObats'
+import EditObat from '../pages/admin/screens/obats/EditObat'
 
 const Routers = () => {
     return <Routes>
@@ -52,6 +54,8 @@ const Routers = () => {
             <Route path='posts/manage/edit/:slug' element={<EditPost />} />
             <Route path='videos/manage' element={<ManageVideos />} />
             <Route path='videos/manage/edit/:slug' element={<EditVideo />} />
+            <Route path='obats/manage' element={<ManageObats />} />
+            <Route path='obats/manage/edit/:slug' element={<EditObat />} />
         </Route>
     </Routes>
 }

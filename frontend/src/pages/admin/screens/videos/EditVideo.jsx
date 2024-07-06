@@ -182,7 +182,7 @@ const EditVideo = () => {
 
                     <div className="d-form-control w-full">
                       <label htmlFor="vidurl" className='d-label'>
-                        <span className='d-label-text'>Judul URL</span>
+                        <span className='d-label-text'>Link Video</span>
                       </label>
                       <input id='vidurl' value={vidurl} className='d-input d-input-bordered border-slate-300 !outline-stone-300 text-xl font-[600] text-headingColor md:text-[26px]' 
                       onChange={(e) => setVidurl(e.target.value)} 

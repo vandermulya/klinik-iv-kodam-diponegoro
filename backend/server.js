@@ -14,6 +14,7 @@ import postRoutes from './routes/postRoutes'
 import commentRoutes from './routes/commentRoutes'
 import postCategoriesRoutes from './routes/postCategoriesRoutes'
 import videoRoutes from './routes/videoRoutes'
+import obatRoutes from './routes/obatRoutes'
 
 dotenv.config();
 connectDB();
@@ -30,6 +31,7 @@ app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/post-categories", postCategoriesRoutes);
 app.use("/api/videos", videoRoutes);
+app.use("/api/obats", obatRoutes);
 
 // STATIC ASSETS
 app.use("/uploads", express.static(path.join(__dirname, '/uploads')))
