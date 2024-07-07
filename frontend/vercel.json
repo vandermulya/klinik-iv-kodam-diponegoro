@@ -1,6 +1,11 @@
 {
     "rewrites": [{
-        "source": "/(.*)",
-        "destination": "/"
-    }]
+            "source": "/api/:path(.*)",
+            "destination": "https://apiklinikkodam.medisimed.com/"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ]
 }

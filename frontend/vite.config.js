@@ -1,15 +1,20 @@
 import {
   defineConfig
-} from 'vite'
-import react from '@vitejs/plugin-react'
+} from 'vite';
+import react from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
 
-// https://vitejs.dev/config/
+// Load environment variables
+dotenv.config();
+
+console.log('API URL:', process.env.VITE_API_URL);
+
 export default defineConfig({
   server: {
     proxy: {
-      '/api': "https://apiklinikkodam.medisimed.com/"
+      '/api': process.env.VITE_API_URL,
     },
   },
   plugins: [react()],
   base: '/'
-})
+});
