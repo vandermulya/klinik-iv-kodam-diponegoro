@@ -44,6 +44,10 @@
     .active-editor-btn {
         @apply text-slate-800 bg-slate-200;
     }
+
+    .italic-menu {
+        @apply italic;
+    }
 }
 
 @media only screen and (max-width: 1024px) {

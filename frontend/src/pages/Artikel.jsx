@@ -51,7 +51,7 @@ const Artikel = () => {
             <div className="mt-10 lg:w-1/2">
                 <h1 className='text-3xl text-center font-[700] text-headingColor md:text-5xl lg:text-4xl xl:text-5xl lg:text-left lg:max-w-[540px]'>Perbanyak literasi medis melalui artikel kami.</h1>
                 <p className='text-textColor mt-4 text-center md:text-xl lg:text-base xl:text-xl lg:text-left'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque nemo ut temporibus. Amet aspernatur tempore veritatis, deserunt illo.
+                    Kami menyediakan berbagai artikel menarik seputar kesehatan, gaya hidup, perawatan diri, dan lainnya yang dapat menambah literatur wawasan Anda.
                 </p>
                 {/* <div className="flex flex-col gap-y-2.5 mt-10 lg:mt-6 xl:mt-10 relative">
                     <div className="relative">

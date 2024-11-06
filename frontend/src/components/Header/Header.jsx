@@ -13,12 +13,16 @@ const navLinks = [
         display: 'Beranda',
     },
     {
-        path: '/artikel',
-        display: 'Artikel',
+        path: '/telemedicine',
+        display: 'Telemedicine',
     },
     {
         path: '/data-obat',
         display: 'Data Obat',
+    },
+    {
+        path: '/artikel',
+        display: 'Artikel',
     },
     {
         path: '/video-edukasi',
@@ -69,7 +73,7 @@ const Header = () => {
                     <div className="navigation" ref={menuRef} onClick={toggleMenu}>
                         <ul className="menu flex items-center gap-[2.7rem]">
                             {navLinks.map((link, index) => (
-                                    <li key={index}>
+                                    <li key={index} className={link.display === 'Telemedicine' ? 'italic-menu' : ''}>
                                         <NavLink to={link.path} 
                                         className={navClass => navClass.isActive 
                                         ? 'text-primaryColor text-[16px] leading-7 font-[600]' 

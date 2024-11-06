@@ -147,7 +147,7 @@ const DataObatCoba = () => {
             <div className="mt-10 lg:w-1/2">
                 <h1 className='text-3xl text-center font-[700] text-headingColor md:text-5xl lg:text-4xl xl:text-5xl lg:text-left lg:max-w-[540px]'>Ketahui macam-macam dan jenis obat-obatan.</h1>
                 <p className='text-textColor mt-4 text-center md:text-xl lg:text-base xl:text-xl lg:text-left'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque nemo ut temporibus. Amet aspernatur tempore veritatis, deserunt illo.
+                    Informasi seputar obat-obatan kami sajikan pada <i>database</i> kami sebagai petunjuk pemakaian serta arahan bagi Anda.
                 </p>
                 <div className="flex flex-col gap-y-2.5 mt-10 lg:mt-6 xl:mt-10 relative">
                     <form action="">

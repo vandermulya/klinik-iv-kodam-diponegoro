@@ -27,6 +27,7 @@ import ManageVideos from '../pages/admin/screens/videos/ManageVideos'
 import EditVideo from '../pages/admin/screens/videos/EditVideo'
 import ManageObats from '../pages/admin/screens/obats/ManageObats'
 import EditObat from '../pages/admin/screens/obats/EditObat'
+import Telemedicine from '../pages/Telemedicine'
 
 const Routers = () => {
     return <Routes>
@@ -43,6 +44,7 @@ const Routers = () => {
         <Route path='/video-edukasi/:slug' element={<VidEduDetailPage/>} />
         {/* <Route path='/data-obat' element={<DataObat/>} /> */}
         <Route path='/data-obat' element={<DataObatCoba/>} />
+        <Route path='/telemedicine' element={<Telemedicine/>} />
 
         <Route path='/admin' element={<AdminLayout/>}>
             <Route index element={<Admin />} />
