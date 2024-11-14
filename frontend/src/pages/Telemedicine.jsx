@@ -11,28 +11,30 @@ const Telemedicine = () => {
     return (
         <>
             {/* SECTION HEADER KOMPONEN PAGE TELEMEDICINE */}
-            <section className="container w-full h-auto bg-gradient-to-r from-[#cdf1f2] via-[#ffffff] to-[#fff5e0] mx-auto flex flex-col px-5 py-5 lg:flex-row lg:items-center">
+            <section className="container mx-auto flex flex-col px-5 py-5 lg:flex-row lg:items-center bg-gradient-to-r from-[#cdf1f2] via-[#ffffff] to-[#fff5e0]">
                 {/* Text Content */}
-                <div className="mt-10 lg:w-1/2">
-                    <h1 className="text-3xl font-bold text-center text-headingColor md:text-5xl lg:text-left lg:max-w-[540px] lg:text-4xl xl:text-5xl">
-                        Konsultasi dengan tenaga medis ahli kami!
-                    </h1>
-                    <p className="mt-4 text-base text-center text-textColor md:text-xl lg:text-left xl:text-xl">
-                        Konsultasikan segala keluhan yang berkaitan dengan kesehatan Anda 
-                        dengan tenaga medis kami yang akan sedia selalu membantu Anda!
-                    </p>
-                </div>
+                <div className="flex flex-col lg:flex-row my-3 items-center">
+                    <div className="mt-10 lg:w-1/2">
+                        <h1 className="text-3xl font-bold text-center text-headingColor md:text-5xl lg:text-left lg:max-w-[540px] lg:text-4xl xl:text-5xl">
+                            Konsultasi dengan tenaga medis ahli kami!
+                        </h1>
+                        <p className="mt-4 text-base text-center text-textColor md:text-xl lg:text-left xl:text-xl">
+                            Konsultasikan segala keluhan yang berkaitan dengan kesehatan Anda 
+                            dengan tenaga medis kami yang akan sedia selalu membantu Anda!
+                        </p>
+                    </div>
 
-                {/* Video Content */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-                    <div className="w-full max-w-lg aspect-w-16 aspect-h-9 mt-6 mb-3 lg:my-0 lg:mr-12 lg:ml-24">
-                        <iframe
-                            className="aspect-video w-full rounded-xl shadow-xl"
-                            src="https://www.youtube-nocookie.com/embed/fHfO7DMGrZg?si=Rbje_Rz-G8Suup2P"
-                            title="Video Tutorial Telemedicine Klinik Kodam IV Diponegoro"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
+                    {/* Video Content */}
+                    <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+                        <div className="w-full max-w-lg aspect-w-16 aspect-h-9 mt-6 mb-3 lg:my-0 lg:mr-12 lg:ml-24">
+                            <iframe
+                                className="aspect-video w-full rounded-xl shadow-xl"
+                                src="https://www.youtube-nocookie.com/embed/S7c1_XpGX5w?si=OUARgf6fE5whewM3"
+                                title="Video Tutorial Telemedicine Klinik Kodam IV Diponegoro"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </section>
